@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="en">
+<html class="light" lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -19,53 +19,53 @@
             theme: {
                 extend: {
                     "colors": {
-                        "tertiary-fixed": "#b7f700",
-                        "primary-fixed-dim": "#c8c6c7",
-                        "surface-variant": "#353437",
-                        "secondary-fixed-dim": "#c6c6c6",
-                        "on-primary": "#313031",
-                        "surface-container-high": "#2a2a2c",
-                        "on-error-container": "#ffdad6",
-                        "surface-container-lowest": "#0e0e10",
-                        "on-primary-fixed": "#1c1b1c",
-                        "surface-container-highest": "#353437",
-                        "on-tertiary-fixed-variant": "#374e00",
-                        "secondary-container": "#454747",
-                        "on-background": "#e4e2e4",
-                        "on-surface": "#e4e2e4",
-                        "surface-bright": "#39393b",
-                        "error": "#ffb4ab",
-                        "inverse-primary": "#5f5e5f",
-                        "primary": "#c8c6c7",
-                        "inverse-surface": "#e4e2e4",
-                        "on-secondary-fixed": "#1a1c1c",
-                        "outline": "#919094",
-                        "on-primary-container": "#7a797a",
-                        "on-secondary-fixed-variant": "#454747",
-                        "on-surface-variant": "#c7c6ca",
-                        "primary-container": "#0a0a0b",
-                        "tertiary-fixed-dim": "#a0d800",
-                        "surface-tint": "#c8c6c7",
-                        "secondary-fixed": "#e2e2e2",
-                        "surface": "#131315",
+                        "tertiary-fixed": "#9c9c9c",
+                        "primary-fixed-dim": "#9c9c9c",
+                        "surface-variant": "#9c9c9c",
+                        "secondary-fixed-dim": "#9c9c9c",
+                        "on-primary": "#9c9c9c",
+                        "surface-container-high": "#ff0000",
+                        "on-error-container": "#ff0000",
+                        "surface-container-lowest": "#f4e3d2", <!--second box bg-->
+                        "on-primary-fixed": "#ff0000",
+                        "surface-container-highest": "#ff0000",
+                        "on-tertiary-fixed-variant": "#ff0000",
+                        "secondary-container": "#ff0000",
+                        "on-background": "#9b7c6f",
+                        "on-surface": "#9b7c6f",
+                        "surface-bright": "#ff0000",
+                        "error": "#ff0000",
+                        "inverse-primary": "#ff0000",
+                        "primary": "#9b7c6f",
+                        "inverse-surface": "#ff0000",
+                        "on-secondary-fixed": "#ff0000",
+                        "outline": "#919094",<!--button outline-->
+                        "on-primary-container": "#ff0000",
+                        "on-secondary-fixed-variant": "#ff0000",
+                        "on-surface-variant": "#5e5d5d", <!--text color-->
+                        "primary-container": "#ff0000",
+                        "tertiary-fixed-dim": "#ff0000",
+                        "surface-tint": "#ff0000",
+                        "secondary-fixed": "#ff0000",
+                        "surface": "#f4e3d2",
                         "surface-dim": "#131315",
                         "inverse-on-surface": "#303032",
-                        "surface-container-low": "#1b1b1d",
-                        "primary-fixed": "#e5e2e3",
-                        "surface-container": "#1f1f21",
-                        "error-container": "#93000a",
+                        "surface-container-low": "#f4e3d2", <!--third box bg-->
+                        "primary-fixed": "#ff0000",
+                        "surface-container": "#c4bbb1",
+                        "error-container": "#ff0000",
                         "outline-variant": "#46464a",
-                        "on-error": "#690005",
-                        "on-tertiary": "#253600",
-                        "on-secondary-container": "#b5b5b5",
-                        "secondary": "#c6c6c6",
-                        "tertiary": "#a0d800",
-                        "on-tertiary-fixed": "#141f00",
-                        "on-primary-fixed-variant": "#474647",
-                        "tertiary-container": "#060c00",
-                        "on-tertiary-container": "#618500",
-                        "on-secondary": "#2f3131",
-                        "background": "#FAF0E6"
+                        "on-error": "#ff0000",
+                        "on-tertiary": "#ff0000",
+                        "on-secondary-container": "#ff0000",
+                        "secondary": "#507adc",
+                        "tertiary": "#f0659f",
+                        "on-tertiary-fixed": "#d63c1a",
+                        "on-primary-fixed-variant": "#d63c1a",
+                        "tertiary-container": "#d63c1a",
+                        "on-tertiary-container": "#d63c1a",
+                        "on-secondary": "#d63c1a",
+                        "background": "#f4e3d2"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -81,12 +81,12 @@
                         "gutter": "24px"
                     },
                     "fontFamily": {
-                        "headline-lg": ["Syne"],
+                        "headline-lg": ["Fondamento"],
                         "body-md": ["Geist"],
                         "display-xl": ["Syne"],
                         "label-code": ["Space Mono"],
                         "body-lg": ["Geist"],
-                        "display-xl-mobile": ["Syne"],
+                        "display-xl-mobile": ["Fondamento"],
                         "headline-sm": ["Syne"],
                         "label-caps": ["Space Mono"]
                     },
@@ -106,7 +106,7 @@
     </script>
     <style>
         body {
-            background-color: #0A0A0B;
+            background-color: #f4e3d2; <!--top box bg-->
             color: #e4e2e4;
             overflow-x: hidden;
         }
@@ -181,12 +181,11 @@
                 class="inline-block px-4 py-1 glass-card rounded-full mb-8 font-label-code text-label-code text-tertiary border border-tertiary/20">
                 LATEST MODEL: V.04_SYNTHESIS
             </div>
-            <h1 class="font-display-xl text-headline-lg lg:text-display-xl text-primary leading-[0.9] mb-8">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary">Kate Alvarez</span>
+            <h1 class="font-display-xl text-headline-lg lg:text-display-xl text-primary mb-8">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary inline-block py-2">eight2late</span>
             </h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
-                A journey through the latent space where algorithmic logic meets ethereal beauty. Explore a curated
-                collection of generative art driven by experimental prompt engineering.
+                a community space @ princeton university. 
             </p>
             <div class="flex gap-6">
                 <button
