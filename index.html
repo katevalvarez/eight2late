@@ -88,6 +88,8 @@
                     "fontSize": {
                         "headline-lg-mobile": ["60px", { "lineHeight": "48px", "fontWeight": "800" }],
                         "headline-lg": ["50px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline2-lg-mobile": ["40px", { "lineHeight": "48px", "fontWeight": "800" }],
+                        "headline2-lg": ["60px", { "lineHeight": "48px", "fontWeight": "800" }],
                         "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
                         "display-xl": ["84px", { "lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
                         "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "400" }],
@@ -263,7 +265,7 @@
                     <div>3</div>
                     <div>4</div>
                     <div>5</div>
-                    <div>6</div>
+                    <div class="bg-tertiary">6</div>
                     <div>7</div>
                     <div>8</div>
                     <div>9</div>
@@ -301,7 +303,13 @@
             </div>
         </div>
     </header>
+    
+    
     <!-- 01. Latent Gallery -->
+    <section class="py-32 px-margin-mobile md:px-margin-desktop bg-surface-container-lowest" id="pics">
+        <div class="font-display-xl text-headline-lg text-primary pb-4">pics</div>
+    </section>
+    
     <section class="py-32 px-margin-desktop bg-surface-container-lowest" id="gallery">
         <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div class="max-w-xl">
@@ -342,9 +350,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
             <div class="relative">
                 <div class="absolute -top-12 -left-12 font-display-xl text-[200px] opacity-[0.03] select-none text-primary pointer-events-none">
-                    PROMPT</div>
+                    CONCEPT</div>
                 <span class="font-label-code text-label-code text-tertiary mb-4 block">SECTION / 02</span>
-                <h2 class="font-headline-lg text-headline-lg text-primary mb-8">Prompt Engineering</h2>
+                <h2 class="font-display-xl text-headline-lg text-primary pb-4">the concept</h2>
                 <div class="space-y-6">
                     <div class="p-6 glass-card rounded-xl border-l-4 border-l-tertiary prompt-glow">
                         <div class="font-label-code text-label-code text-on-surface-variant mb-4 flex items-center gap-2">
@@ -352,9 +360,7 @@
                             MODEL_RUN: STEPS_50 | CFG_7.5
                         </div>
                         <p class="font-label-code text-label-code text-primary italic">
-                            "A hyper-structured architectural lattice suspended in a vacuum of liquid nitrogen,
-                            refractive glass elements, iridescent silver highlights, sharp lime-green fiber optics,
-                            volumetric lighting, 8k resolution, minimalist futurism."
+                            "eight2late is a collection of all the events to be hosted in bethany, brianna, kate, & raylan’s spelman 82 dorm. from pop-up cafes, birthday parties, and kamayans, eight2late hopes to be a space for our community at princeton to exist and enjoy each other’s company."
                         </p>
                     </div>
                     <div class="p-6 glass-card rounded-xl border-l-4 border-l-outline-variant opacity-50 hover:opacity-100 transition-all cursor-default">
@@ -445,29 +451,10 @@
     <footer class="py-24 px-margin-desktop border-t border-outline-variant/20">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
             <div>
-                <h2 class="font-headline-lg text-headline-lg text-primary mb-8 tracking-tighter">HOME</h2>
+                <h2 class="font-display-xl text-headline2-lg-mobile lg:text-headline2-lg text-primary mb-8">eight2<wbr>late</h2>
                 <div class="flex gap-4">
-                    <span class="material-symbols-outlined text-tertiary" data-icon="terminal">terminal</span>
-                    <span class="font-label-code text-label-code text-on-surface-variant">LOGGED IN AS:
-                        SYSTEM_ADMIN_01</span>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-8">
-                <div>
-                    <span class="font-label-caps text-label-caps text-primary mb-6 block">NAVIGATION</span>
-                    <ul class="space-y-4 text-on-surface-variant font-body-md">
-                        <li><a class="hover:text-tertiary transition-colors" href="#">Manifesto</a></li>
-                        <li><a class="hover:text-tertiary transition-colors" href="#">Latent Archive</a></li>
-                        <li><a class="hover:text-tertiary transition-colors" href="#">Tools &amp; Lora</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <span class="font-label-caps text-label-caps text-primary mb-6 block">CONNECT</span>
-                    <ul class="space-y-4 text-on-surface-variant font-body-md">
-                        <li><a class="hover:text-tertiary transition-colors" href="#">Discord</a></li>
-                        <li><a class="hover:text-tertiary transition-colors" href="#">Twitter / X</a></li>
-                        <li><a class="hover:text-tertiary transition-colors" href="#">Foundation</a></li>
-                    </ul>
+                    <span class="material-symbols-outlined text-tertiary" data-icon="kid_star">kid_star</span>
+                    <span class="font-label-code text-label-code text-primary">this website was created by kate alvarez.</span>
                 </div>
             </div>
         </div>
