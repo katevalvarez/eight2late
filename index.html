@@ -106,6 +106,7 @@
     <style>
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
         body {
             background-color: #f4e3d2; /*top box bg*/
@@ -267,6 +268,38 @@
         .swiper-slide:nth-child(10n) {
             background-color: rgb(54, 94, 77);
         }
+
+        @view-transition {
+            navigation: auto; /* Enables native cross-document transitions */
+        }
+        @keyframes slide-out-to-left {
+            to { transform: translateX(100%); }
+        }
+
+        /* Animation for the incoming page */
+        @keyframes slide-in-from-right {
+            from { transform: translateX(-100%); }
+        }
+        /* Configure overall animation timing */
+        ::view-transition-group(root) {
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+        }
+
+        /* Apply slide out to old page */
+        ::view-transition-old(root) {
+            animation-name: slide-out-to-left;
+        }
+
+        /* Apply slide in to new page */
+        ::view-transition-new(root) {
+            animation-name: slide-in-from-right;
+        }
+
+        nav {
+            view-transition-name: main-nav;
+        }
+
     </style>
 </head>
 
@@ -282,7 +315,9 @@
             <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-500" href="#concept">the concept</a>
         </div>
         <div class="flex items-center gap-4 text-primary">
-            <span class="material-symbols-outlined hover:text-secondary transition-all active:scale-95 cursor-pointer" data-icon="kid_star">kid_star</span>
+            <a href="about.html">
+                <span class="material-symbols-outlined hover:text-secondary transition-all active:scale-95 cursor-pointer" data-icon="kid_star">kid_star</span>
+            </a>
         </div>
     </nav>
     
@@ -294,7 +329,7 @@
         </div>
         <div class="relative z-10 max-w-5xl">
             <h1 class="font-display-xl text-headline-lg-mobile lg:text-display-xl text-primary mb-8">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary inline-block pt-8">eight2<wbr>late</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-secondary inline-block pt-4 md:pt-8">eight2<wbr>late</span>
             </h1>
             <p class="font-body-lg text-body-lg text-primary max-w-2xl mb-10">
                 a community space @ princeton university. 
