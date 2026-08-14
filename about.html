@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>eight2late</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&amp;family=Geist:wght@400;600&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#9c9c9c",
+                        "quadtiary": "#9a6ec0",
+                        "primary-fixed-dim": "#9c9c9c",
+                        "surface-variant": "#9c9c9c",
+                        "secondary-fixed-dim": "#9c9c9c",
+                        "on-primary": "#9c9c9c",
+                        "weekday-col": "rgba(145, 144, 148, 1)",
+                        "gray-col": "#c8c6c7",
+                        "on-error-container": "#ff0000",
+                        "surface-container-lowest": "#f4e3d2", <!--second box bg-->
+                        "on-primary-fixed": "#ff0000",
+                        "surface-container-highest": "#ff0000",
+                        "on-tertiary-fixed-variant": "#ff0000",
+                        "secondary-container": "#507adc",
+                        "on-background": "#9b7c6f",
+                        "on-surface": "#9b7c6f",
+                        "surface-bright": "#ff0000",
+                        "error": "#ff0000",
+                        "inverse-primary": "#ff0000",
+                        "primary": "#9b7c6f",
+                        "inverse-surface": "#ff0000",
+                        "on-secondary-fixed": "#ff0000",
+                        "outline": "#919094",<!--button outline-->
+                        "on-primary-container": "#edeff0",
+                        "on-secondary-fixed-variant": "#edeff0",
+                        "on-surface-variant": "#716e6e", <!--text color-->
+                        "primary-container": "#ff0000",
+                        "tertiary-fixed-dim": "#ff0000",
+                        "surface-tint": "#ff0000",
+                        "secondary-fixed": "#ff0000",
+                        "surface": "#f4e3d2",
+                        "surface-dim": "#131315",
+                        "inverse-on-surface": "#303032",
+                        "surface-container-low": "#f4e3d2", <!--third box bg-->
+                        "primary-fixed": "#ff0000",
+                        "surface-container": "#c4bbb1",
+                        "error-container": "#ff0000",
+                        "outline-variant": "#46464a",
+                        "on-error": "#ff0000",
+                        "on-tertiary": "#ff0000",
+                        "on-secondary-container": "#ff0000",
+                        "secondary": "#507adc",
+                        "tertiary": "#f0659f",
+                        "on-tertiary-fixed": "#d63c1a",
+                        "on-primary-fixed-variant": "#d63c1a",
+                        "tertiary-container": "#f0659f",
+                        "on-tertiary-container": "#d63c1a",
+                        "on-secondary": "#d63c1a",
+                        "background": "#f4e3d2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "overlap-offset": "-32px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Fondamento"],
+                        "body-md": ["Geist"],
+                        "display-xl": ["Syne"],
+                        "label-code": ["Space Mono"],
+                        "body-lg": ["Geist"],
+                        "display-xl-mobile": ["Fondamento"],
+                        "headline-sm": ["Syne"],
+                        "label-caps": ["Space Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["60px", { "lineHeight": "48px", "fontWeight": "800" }],
+                        "headline-lg": ["50px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline2-lg-mobile": ["40px", { "lineHeight": "48px", "fontWeight": "800" }],
+                        "headline2-lg": ["60px", { "lineHeight": "48px", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-xl": ["84px", { "lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-xl-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        body {
+            background-color: #f4e3d2; /*top box bg*/
+            color: #e4e2e4;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(145, 144, 148, 0.2);
+        }
+
+        .iridescent-border {
+            position: relative;
+        }
+
+        .iridescent-border::after {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(45deg, #a0d800, #c8c6c7, #b7f700, #313031);
+            z-index: -1;
+            opacity: 0.1;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: destination-out;
+        }
+
+        .shimmer-hover:hover .shimmer-layer {
+            transform: translateX(100%);
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .prompt-glow {
+            box-shadow: 0 0 40px rgba(160, 216, 0, 0.1);
+        }
+        
+        .flex-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            gap:40px;
+        }
+        
+        .flex-item {
+            flex: 50%;
+        }
+        
+        /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+        @media (max-width: 600px) {
+            .flex-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap:40px;
+                flex-direction: column-reverse;
+            }
+            .flex-item {
+                flex: 100%;
+            }
+        }
+        
+        .container {
+            display: grid;
+            grid-column: 7;
+            grid-template-columns: auto auto auto auto auto auto auto;
+            gap:10px;
+        }
+        
+        .container div {
+            border-right: 1px solid rgba(145, 144, 148, 0.2);
+            border-bottom: 1px solid rgba(145, 144, 148, 0.2);
+            
+            padding: 10px;
+            text-align: left;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .weekday {
+            display: grid;
+            grid-column: 7;
+            grid-template-columns: auto auto auto auto auto auto auto;
+            gap:10px;
+            margin-top:10px;
+            margin-bottom:30px;
+        }
+        
+        .weekday div {
+            text-align: center;
+            transform: translateX(-6px);
+            font-size:13px;
+        }
+
+        .arrow {
+            border: 1px solid rgba(145, 144, 148, 0.2);
+        }
+
+        .arrow:hover .arrow-icon {
+            color: #f0659f;
+        }
+
+        .swiper {
+            width:80%;
+            max-width: 600px;
+            aspect-ratio:3/2;
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .swiper-slide:nth-child(1n) {
+            background-color: rgb(206, 17, 17);
+        }
+
+        .swiper-slide:nth-child(2n) {
+            background-color: rgb(0, 140, 255);
+        }
+
+        .swiper-slide:nth-child(3n) {
+            background-color: rgb(10, 184, 111);
+        }
+
+        .swiper-slide:nth-child(4n) {
+            background-color: rgb(211, 122, 7);
+        }
+
+        .swiper-slide:nth-child(5n) {
+            background-color: rgb(118, 163, 12);
+        }
+
+        .swiper-slide:nth-child(6n) {
+            background-color: rgb(180, 10, 47);
+        }
+
+        .swiper-slide:nth-child(7n) {
+            background-color: rgb(35, 99, 19);
+        }
+
+        .swiper-slide:nth-child(8n) {
+            background-color: rgb(0, 68, 255);
+        }
+
+        .swiper-slide:nth-child(9n) {
+            background-color: rgb(218, 12, 218);
+        }
+
+        .swiper-slide:nth-child(10n) {
+            background-color: rgb(54, 94, 77);
+        }
+
+        @view-transition {
+            navigation: auto; /* Enables native cross-document transitions */
+        }
+        @keyframes slide-out-to-right {
+            to { transform: translateX(-100%); }
+        }
+
+        /* Animation for the incoming page */
+        @keyframes slide-in-from-left{
+            from { transform: translateX(100%); }
+        }
+        /* Configure overall animation timing */
+        ::view-transition-group(root) {
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+        }
+
+        /* Apply slide out to old page */
+        ::view-transition-old(root) {
+            animation-name: slide-out-to-right;
+        }
+
+        /* Apply slide in to new page */
+        ::view-transition-new(root) {
+            animation-name: slide-in-from-left;
+        }
+
+        nav {
+            view-transition-name: main-nav;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-body-md selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+    <!-- TopAppBar -->
+    <nav class="fixed top-0 w-full backdrop-blur-xl bg-surface/10 border-b border-outline-variant/20 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 z-50">
+        <a href="index.html#header">
+            <div class="font-headline-sm text-headline-sm font-bold tracking-tighter text-primary dark:text-primary">[spelman82]
+            </div>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-on-surface-variant font-bold font-label-caps text-label-caps hover:text-tertiary transition-colors duration-500" href="index.html#pics">pics</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-500" href="index.html#concept">the concept</a>
+        </div>
+        <div class="flex items-center gap-4 text-secondary">
+            <a href="index.html">
+                <span class="material-symbols-outlined hover:text-secondary transition-all active:scale-95 cursor-pointer" data-icon="kid_star">kid_star</span>
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Title Section -->
+    <header class="relative min-h-screen px-margin-desktop pt-[240px]" id="header">
+        <div class="absolute inset-0 z-10">
+            <div class="absolute top-1/4 -right-1/4 w-[600px] h-[600px] bg-tertiary/10 md:bg-tertiary/10  rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-secondary/0 md:bg-secondary/10 rounded-full blur-[100px]"></div>
+        </div>
+        <div class="relative z-10 max-w-5xl whitespace-nowrap">
+            <div class="absolute -top-12 -left-12 font-display-xl text-[200px] opacity-[0.04] select-none text-primary pointer-events-none">
+            ABOUT US</div>
+            <h2 class="font-display-xl text-headline-lg text-primary pb-4">about us</h2>
+        </div>
+        <div>
+            <p class="font-body-lg text-body-lg text-primary max-w-2xl mb-10 mt-[10px]">
+                eight2late was created by bethany, brianna, kate, and raylan. 
+            </p>
+        </div>
+
+        <div class="relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[32px] md:gap-10 items-start pb-[50px]">
+                <div>
+                    <p class="font-body-lg text-body-lg text-primary max-w-2xl">
+                        <span class="font-label-code text-[16px] font-bold">BETHANY MARIEL SULIGUIN </span>is an ecology and evolutionary biology major in her final year. in her free time she posts the most delectable mouth-watering sweet treats that will ever bless your eyes. 
+                        <br>
+                        <br>
+                        <span class="font-label-code text-[16px] font-bold">BRIANNA MELANIE SULIGUIN </span>is an ecology and evolutionary biology major also in her final year, and twin sister of bethany. she’s a korean skincare & beauty baddie and has a lot of pr from making tiktoks. 
+                    </p>
+                </div>
+                <div>
+                    <p class="font-body-lg text-body-lg text-primary max-w-2xl">
+                        <span class="font-label-code text-[16px] font-bold">KATE ALVAREZ</span> is an electrical and computer engineering major in her final year. she made this website at her summer internship when she was supposed to be doing other work.
+                        <br>
+                        <br>
+                        <span class="font-label-code text-[16px] font-bold">RAYLAN LI</span> is an architecture major in his junior year at princeton. he made a scale model of spelman 82 in roblox and absolutely carried our room draw. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Footer / Contact -->
+    <footer class="py-24 px-margin-desktop bg-surface border-t border-outline-variant/20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+            <div>
+                <h2 class="font-display-xl text-headline2-lg-mobile lg:text-headline2-lg text-primary mb-8">eight2<wbr>late</h2>
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-tertiary" data-icon="kid_star">kid_star</span>
+                    <span class="font-label-code text-label-code text-primary">this website was created by kate alvarez.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body></html>
